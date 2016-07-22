@@ -1,8 +1,35 @@
-module Erl.Data.Binary where
+module Erl.Data.Binary (Binary, bin, stringFromBin) where
+
+import Prelude
+import Data.Monoid
+import Data.Semigroup
 
 foreign import data Binary :: *
+
+
+foreign import data IOList :: *
+
 
 -- TODO this is terrible
 foreign import bin :: String -> Binary
 
 foreign import stringFromBin :: Binary -> String
+
+foreign import toIolist :: Binary -> IOList
+
+foreign import fromIolist :: IOList -> Binary
+
+foreign import eq_ :: Binary -> Binary -> Boolean
+
+instance binaryEq :: Eq Binary where
+  eq = eq_
+
+foreign import mempty_ :: IOList
+
+instance applyIolist :: Monoid IOList where
+  mempty = mempty_
+
+foreign import append_ :: IOList -> IOList -> IOList
+
+instance semigroupIolist :: Semigroup IOList where
+  append = append_
