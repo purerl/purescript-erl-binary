@@ -1,4 +1,4 @@
-module Erl.Data.Binary (Binary, bin, stringFromBin) where
+module Erl.Data.Binary (Binary, IOList, toIolist, fromIolist) where
 
 import Prelude
 import Data.Monoid
@@ -6,14 +6,7 @@ import Data.Semigroup
 
 foreign import data Binary :: *
 
-
 foreign import data IOList :: *
-
-
--- TODO this is terrible
-foreign import bin :: String -> Binary
-
-foreign import stringFromBin :: Binary -> String
 
 foreign import toIolist :: Binary -> IOList
 

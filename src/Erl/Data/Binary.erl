@@ -6,7 +6,7 @@ stringFromBin(B) -> binary_to_list(B).
 
 eq_(X,Y) -> X == Y.
 
-toIolist(X) -> [X].
+toIolist(X) -> X.
 fromIolist(X) -> iolist_to_binary(X).
 
 mempty_() -> [].
