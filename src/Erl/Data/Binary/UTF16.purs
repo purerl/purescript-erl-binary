@@ -1,6 +1,8 @@
 module Erl.Data.Binary.UTF16 where
 
-foreign import data UTF16String :: *
+import Erl.Data.Binary
+
+foreign import data UTF16String :: Type
 
 foreign import fromString :: String -> UTF16String
 

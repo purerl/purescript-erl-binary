@@ -4,9 +4,9 @@ import Prelude
 import Data.Monoid
 import Data.Semigroup
 
-foreign import data Binary :: *
+foreign import data Binary :: Type
 
-foreign import data IOList :: *
+foreign import data IOList :: Type
 
 foreign import toIolist :: Binary -> IOList
 

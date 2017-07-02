@@ -1,6 +1,8 @@
 module Erl.Data.Binary.UTF32 where
 
-foreign import data UTF32String :: *
+import Erl.Data.Binary
+
+foreign import data UTF32String :: Type
 
 foreign import fromString :: String -> UTF32String
 
