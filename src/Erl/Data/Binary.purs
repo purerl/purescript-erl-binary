@@ -1,8 +1,6 @@
 module Erl.Data.Binary (Binary, IOList, toIolist, fromIolist) where
 
 import Prelude
-import Data.Monoid
-import Data.Semigroup
 
 foreign import data Binary :: Type
 
