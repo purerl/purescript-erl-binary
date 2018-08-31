@@ -7,4 +7,4 @@ ps:
 
 erl:
 	mkdir -p ebin
-	erlc -o ebin/ output/*/*.erl
+	erlc -o ebin/ +debug_info output/*/*.erl
