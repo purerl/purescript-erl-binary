@@ -1,3 +1,4 @@
+-- | Representation of Erlang iodata(). Some duplication of functions from IOList to avoid unnecessary conversions in common cases.
 module Erl.Data.Binary.IOData where
 
 import Prelude

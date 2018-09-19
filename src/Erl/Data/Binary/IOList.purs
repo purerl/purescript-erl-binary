@@ -1,4 +1,4 @@
--- | Representation of Erlang iolists.
+-- | Representation of Erlang iolist().
 module Erl.Data.Binary.IOList (IOList, concat) where
 
 import Prelude
