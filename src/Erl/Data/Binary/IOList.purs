@@ -1,5 +1,5 @@
 -- | Representation of Erlang iolist().
-module Erl.Data.Binary.IOList (IOList, concat, fromBinary, toBinary) where
+module Erl.Data.Binary.IOList (IOList, concat, fromBinary, toBinary, byteSize) where
 
 import Prelude
 import Erl.Data.Binary.Type (Binary)
@@ -26,3 +26,5 @@ foreign import fromBinary :: Binary -> IOList
 -- | Collapse an IOList to a Binary
 foreign import toBinary :: IOList -> Binary
 
+-- | Calls iolist_size 
+foreign import byteSize :: IOList -> Int
