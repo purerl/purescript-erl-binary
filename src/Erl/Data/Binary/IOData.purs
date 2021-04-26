@@ -30,3 +30,6 @@ foreign import toBinary :: IOData -> Binary
 
 -- | Concatenate a list of IOData to an IOData. This is a no-op O(1).
 foreign import concat :: List IOData -> IOData
+
+-- | Calls iolist_size
+foreign import byteSize :: IOData -> Int
