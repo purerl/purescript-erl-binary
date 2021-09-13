@@ -2,7 +2,6 @@
 module Erl.Data.Binary.IOData where
 
 import Prelude
-
 import Erl.Data.Binary.IOList (IOList)
 import Erl.Data.Binary.Type (Binary)
 import Erl.Data.List (List)
@@ -14,6 +13,9 @@ foreign import mempty_ :: IOData
 instance applyIoData :: Monoid IOData where
   mempty = mempty_
 
+empty :: IOData
+empty = mempty_
+
 foreign import append_ :: IOData -> IOData -> IOData
 
 instance semigroupIoData :: Semigroup IOData where
@@ -24,6 +26,9 @@ foreign import fromIOList :: IOList -> IOData
 
 -- | Coerce a Binary to IOData (no-op)
 foreign import fromBinary :: Binary -> IOData
+
+-- | Coerce a String to IOData (no-op)
+foreign import fromString :: String -> IOData
 
 -- | Collapse an iodata to binary
 foreign import toBinary :: IOData -> Binary
