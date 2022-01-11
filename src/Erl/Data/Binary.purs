@@ -2,9 +2,11 @@ module Erl.Data.Binary
   ( module T
   , byteSize
   , part
+  , split
   ) where
 
 import Data.Maybe (Maybe(..))
+import Data.Tuple (Tuple(..))
 import Erl.Data.Binary.Type (Binary)
 import Erl.Data.Binary.Type (Binary, showAsErlang, showAsPurescript) as T
 
@@ -20,3 +22,5 @@ foreign import part_ :: Maybe Binary -> (Binary -> Maybe Binary) -> Int -> Int -
 -- | Binary: The binary to extract from
 part :: Int -> Int -> Binary -> Maybe Binary
 part = part_ Nothing Just
+
+foreign import split :: Int -> Binary -> Tuple Binary Binary
