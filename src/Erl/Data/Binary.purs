@@ -6,7 +6,7 @@ module Erl.Data.Binary
   ) where
 
 import Data.Maybe (Maybe(..))
-import Data.Tuple (Tuple(..))
+import Data.Tuple (Tuple)
 import Erl.Data.Binary.Type (Binary)
 import Erl.Data.Binary.Type (Binary, showAsErlang, showAsPurescript) as T
 
