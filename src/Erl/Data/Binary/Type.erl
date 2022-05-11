@@ -1,5 +1,6 @@
 -module(erl_data_binary_type@foreign).
 -export([eq_/2
+        , compare_/5
         , mempty_/0
         , append_/2
         , show_/1
@@ -9,6 +10,12 @@
 
 eq_(X,Y) -> X =:= Y.
 
+compare_(LT, EQ, GT, X, Y) ->
+  if
+    X < Y -> LT;
+    X > Y -> GT;
+    true  -> EQ
+  end.
 mempty_() -> <<>>.
 
 append_(<<>>, Bin2) -> Bin2;
