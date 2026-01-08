@@ -1,9 +1,12 @@
 module Erl.Data.Binary
-  ( module T
+  ( at
   , byteSize
+  , copy
+  , module T
   , part
   , split
-  ) where
+  )
+  where
 
 import Data.Maybe (Maybe(..))
 import Data.Tuple (Tuple)
@@ -24,3 +27,7 @@ part :: Int -> Int -> Binary -> Maybe Binary
 part = part_ Nothing Just
 
 foreign import split :: Int -> Binary -> Tuple Binary Binary
+
+foreign import at :: Binary -> Int -> Int
+
+foreign import copy :: Binary -> Int -> Binary
